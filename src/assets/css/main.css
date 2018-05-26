@@ -1,0 +1,719 @@
+@import 'bootstrap.min.css';
+@import 'bootstrap-reboot.min.css';
+@import 'bootstrap-grid.min.css';
+:root,
+* {
+  --font-family-sans-serif: "Helvetica Neue", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --light: #FFF;
+  --dark: #000;
+  --lighter-blue: #F3F8FF;
+  --light-blue: #DEE8F5;
+  --border-blue: #C3D4EC;
+  --blue: #5E91CC;
+  --green-dark: #9DC53B;
+  --green: #ACCC58;
+  --green-light: #CBDE98;
+  --green-lighter: #EBF3D9;
+  --grey-darker: #2C2E2B;
+  --grey-dark: #808184;
+  /* text color */
+  --grey: #9D9C9E;
+  /* text color */
+  --grey-light: #D2D2D2;
+  /* icons */
+  --grey-lighter: #E4E6E5;
+  /* line color */
+  --red: #F40000;
+  /* Errors */
+  --orange: #F2951F;
+  --orange-lighter: #FBEBD4;
+  --mini-text-size: 12px;
+  --text-size: 15px;
+  --subtitle-size: 24px;
+  font-size: var(--text-size);
+  font-family: var(--font-family-sans-serif);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+body p {
+  color: var(--grey);
+  font-size: var(--text-size);
+}
+
+body a {
+  color: var(--blue);
+  transition: 0.2s color;
+}
+
+body a:hover {
+  color: var(--green);
+  text-decoration: none;
+}
+
+.vh-100 {
+  height: 100vh !important;
+}
+
+.btn.btn-outline-primary {
+  background: none;
+  border: 1px solid var(--green);
+  color: var(--green);
+}
+
+.blue .btn.btn-outline-primary {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.btn.btn-outline-primary:hover {
+  color: var(--light);
+}
+
+
+.blue .btn.btn-outline-primary:hover {
+  color: var(--light);
+  background-color: var(--blue);
+}
+
+.minitext,
+.minitext a {
+  font-size: var(--mini-text-size);
+  line-height: 1.5;
+  font-weight: 200;
+  letter-spacing: 0.7px;
+}
+
+.minitext a {
+  font-weight: 400;
+}
+
+.minitext {
+  color: var(--grey);
+}
+
+.block {
+  display: block;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.red {
+  color: var(--red);
+}
+
+.alert {
+  padding: 20px 15px 6px 70px;
+  border-width: 0;
+  border-radius: 6px;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.alert p {
+  font-weight: normal;
+  font-size: var(--mini-text-size);
+}
+
+.alert .livicon-evo,
+.alert .alert__icon {
+  position: absolute;
+  left: 28px;
+  top: 24px;
+}
+
+.alert.alert-success {
+  background-color: var(--green-lighter);
+}
+
+.alert.alert-danger {
+  background-color: var(--orange-lighter);
+}
+
+.alert-danger .livicon-evo,
+.alert-danger .alert__icon {
+  top: 17px;
+  left: 25px;
+}
+
+button.dropdown-item {
+  height: auto;
+  line-height: 1;
+  padding: 10px 15px;
+  border-radius: 0;
+}
+
+button.dropdown-item:focus {
+  color: var(--grey-darker);
+  outline: 0;
+}
+
+button.dropdown-item:hover {
+  background-color: var(--lighter-blue);
+}
+
+/* Forms */
+
+.float-label-control.has-danger input:not(.empty) {
+  border-color: var(--red);
+}
+
+button,
+.btn {
+  width: 100%;
+  height: 40px;
+  display: block;
+  line-height: 38px;
+  text-align: center;
+  background: var(--green);
+  color: #FFF;
+  border-radius: 20px;
+  border: 0;
+  padding: 0;
+  font-size: var(--font-size);
+  cursor: pointer;
+  transition: 0.2s background-color;
+  position: relative;;
+}
+
+button.orange,
+.btn.orange {
+  background-color: var(--orange);
+}
+
+.btn {
+  line-height: 40px;
+}
+
+.meduim {
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button:hover,
+.btn:hover,
+button:focus,
+.btn:focus {
+  background: var(--green-dark);
+  color: var(--light);
+  outline: none;
+}
+
+.circle-btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--green);
+  margin-top: 100px;
+}
+
+.circle-btn svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.circle-btn-small {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+}
+
+.btn.circle-btn svg {
+  margin: 13px auto;
+}
+
+.circle-btn-small.btn-outline {
+  background-color: var(--light);
+  border: 1px solid var(--green);
+}
+
+.btn.circle-btn svg,
+.btn.circle-btn svg polygon,
+.circle-btn-small.btn-outline:hover svg,
+.circle-btn-small.btn-outline:hover svg polygon {
+  fill: var(--light);
+}
+
+.circle-btn-small.btn-outline svg,
+.circle-btn-small.btn-outline svg polygon {
+  fill: var(--green);
+}
+
+.circle-btn-small.btn-outline:hover {
+  background-color: var(--green);
+}
+
+.circle-btn-small.btn-outline:hover svg {
+  fill: var(--light);
+}
+
+.circle-btn:hover {
+  background-color: var(--green-dark);
+}
+
+.circle-btn[disabled],
+.circle-btn[disabled]:hover {
+  background-color: var(--green-light);
+}
+
+.active .circle-btn,
+.active .circle-btn.btn-outline:hover {
+  background-color: var(--green);
+}
+
+.active .circle-btn svg {
+  fill: var(--light);
+}
+
+.close:hover {
+  fill: var(--green);
+}
+
+.step-btn {
+  width: 140px;
+  height: 60px;
+  border-radius: 30px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  margin-left: 20px;
+  padding: 0 10px;
+}
+
+.step-btn span {
+  float: left;
+  margin-left: 10px;
+}
+
+.step-btn svg {
+  float: right;
+  margin: 13px 5px 0 0;
+  transition: 0.2s margin;
+}
+
+.step-btn:hover svg {
+  margin-right: 0;
+}
+
+.step-btn.btn.btn-outline-primary:hover {
+  background: none;
+}
+
+.step-btn.btn.btn-outline-primary:hover > span {
+  color: var(--green);
+}
+
+button[disabled],
+button[disabled]:hover,
+button[disabled]:focus {
+  background: var(--green-light);
+  cursor: not-allowed;
+}
+
+.has-danger p.minitext:not(.left) {
+  color: var(--red);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid var(--border-blue);
+  background: #FFF;
+  float: left;
+  margin: 3px 10px 0 0;
+  cursor: pointer;
+  transition: 0.2s border-color;
+}
+
+input[type="checkbox"]:checked {
+  background: #FFF url('../images/check.svg') no-repeat center;
+}
+
+div.checkbox:hover > input[type="checkbox"], .login main footer span input[type="checkbox"]:focus {
+  border: 1px solid var(--blue);
+}
+
+.checkbox label {
+  font-size: 12px;
+  font-weight: 300;
+  color: #A8A8A8;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px var(--border-blue);
+}
+
+input[type="radio"]:hover,
+input[type="radio"]:focus,
+input[type="radio"]:checked {
+  box-shadow: 0 0 0 var(--border-blue);
+}
+
+input[type="radio"]:focus,
+input[type="radio"]:checked {
+  border: 5px solid var(--green);
+}
+
+input[type="radio"] ~ label {
+  cursor: pointer;
+}
+
+/**
+ *
+ * Float label Style
+ *
+ */
+
+.float-label-control {
+  position: relative;
+  margin-bottom: 3em;
+  z-index: 0;
+  min-height: 35px;
+}
+
+.float-label-control ::-webkit-input-placeholder {
+  color: transparent !important;
+}
+
+.float-label-control :-moz-placeholder {
+  color: transparent !important;
+}
+
+.float-label-control ::-moz-placeholder {
+  color: transparent !important;
+}
+
+.float-label-control :-ms-input-placeholder {
+  color: transparent !important;
+}
+
+.float-label-control.nolabel ::-webkit-input-placeholder {
+  color: var(--grey-light) !important;
+  font-weight: 300;
+}
+
+.float-label-control.nolabel :-moz-placeholder {
+  color: var(--grey-light) !important;
+  font-weight: 300;
+}
+
+.float-label-control.nolabel ::-moz-placeholder {
+  color: var(--grey-light) !important;
+  font-weight: 300;
+}
+
+.float-label-control.nolabel :-ms-input-placeholder {
+  color: var(--grey-light) !important;
+  font-weight: 300;
+}
+
+.float-label-control input:-webkit-autofill,
+.float-label-control textarea:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  box-shadow: 0 0 0 1000px white inset !important;
+}
+
+.float-label-control.large {
+  margin: 50px 0;
+}
+
+.float-label-control.large input {
+  font-size: var(--subtitle-size);
+  font-weight: 300;
+}
+
+.float-label-control input,
+.float-label-control textarea,
+.float-label-control label {
+  font-size: var(--font-size);
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.float-label-control input,
+.float-label-control textarea {
+  display: block;
+  width: calc(100% - 30px);
+  padding: 5px 0 7px;
+  border: none;
+  border-radius: 0px;
+  border-bottom: 1px solid #282625;
+  outline: none;
+  margin: 0px;
+  background: none;
+  font-weight: normal;
+  height: 35px;
+}
+
+.float-label-control textarea {
+  padding: 5px 0 7px;
+}
+
+.float-label-control label {
+  position: absolute;
+  top: -1.2em;
+  /*left: 0.08em;*/
+  color: #A8A8A8;
+  z-index: -1;
+  font-size: 12px;
+  -webkit-animation: float-labels 200ms none ease-out;
+  animation: float-labels 200ms none ease-out;
+  /* There is a bug sometimes pausing the animation. This avoids that.*/
+  animation-play-state: running !important;
+  -webkit-animation-play-state: running !important;
+}
+
+.float-label-control input.empty+label,
+.float-label-control textarea.empty+label {
+  top: 0.1em;
+  font-size: var(--font-size);
+  animation: none;
+  -webkit-animation: none;
+}
+
+.float-label-control input:not(.empty)+label,
+.float-label-control textarea:not(.empty)+label {
+  z-index: 1;
+}
+
+.float-label-control input:not(.empty),
+.float-label-control textarea:not(.empty),
+.float-label-control input:not(.empty) {
+  border-bottom: 1px solid var(--green);
+}
+
+.float-label-control input:focus,
+.float-label-control textarea:focus,
+.float-label-control.has-danger input:focus~span {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  border-bottom-width: 2px;
+  padding-bottom: 6px;
+}
+
+.float-label-control textarea:focus {
+  padding-bottom: 7px;
+}
+
+.float-label-control.large input:focus,
+.float-label-control.large textarea:focus {
+  background-color: var(--blue-ligher);
+}
+
+.float-label-control.label-bottom label {
+  -webkit-animation: float-labels-bottom 300ms none ease-out;
+  animation: float-labels-bottom 300ms none ease-out;
+}
+
+.float-label-control.label-bottom input:not(.empty)+label,
+.float-label-control.label-bottom textarea:not(.empty)+label {
+  top: 3em;
+}
+
+.float-label-control ul.select-dropdown {
+  width: 100% !important;
+  max-height: 150px;
+  overflow: auto;
+}
+
+.float-label-control ul.select-dropdown.show {
+  display: block !important;
+}
+
+.float-label-control ul.select-dropdown li a {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #282625;
+}
+
+.float-label-control ul.select-dropdown li a:hover {
+  font-weight: bolder;
+}
+
+.float-label-control ul.select-dropdown li a.hide {
+  display: none;
+}
+
+.float-label-control input.empty+label {
+  -webkit-animation: float-labels-reverse 200ms none ease-out;
+  animation: float-labels-reverse 200ms none ease-out;
+}
+
+.float-label-control svg {
+  fill: var(--grey-light);
+  transition: 0.2s fill;
+}
+
+.float-label-control span.icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 35px;
+  width: 30px;
+  text-align: right;
+  border-bottom: 1px solid #282625;
+  transition: 0.2s border-color;
+}
+
+.float-label-control.large input {
+  height: 50px;
+}
+
+.float-label-control.large span.icon {
+  top: 0;
+  height: 50px;
+  padding-top: 10px;
+}
+
+.float-label-control input:not(.empty)~span svg {
+  fill: var(--green);
+}
+
+.float-label-control input:not(.empty)~span {
+  border-color: var(--green);
+}
+
+.float-label-control input:not(.empty):focus~span {
+  border-width: 2px;
+}
+
+.float-label-control.has-danger input~span svg {
+  fill: var(--red);
+}
+
+.float-label-control.has-danger input~span {
+  border-color: var(--red);
+  border-width: 1px;
+}
+
+.float-label-control.no__animation input {
+  font-size: 32px;
+  font-weight: 100;
+}
+
+.float-label-control.no__animation input+label,
+.float-label-control.no__animation input.empty+label {
+  -webkit-animation: none;
+  animation: none;
+  top: -1.5em;
+  font-size: var(--mini-text-size);
+}
+
+.float-label-control input.form-control ~ .row p {
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+.float-label-control input.form-control:focus ~ .row p {
+  color: var(--grey-darker);
+}
+
+.float-label-control.has-success input.form-control ~ .row p {
+  color: var(--green-dark);
+}
+
+.has-success .form-control,
+.has-success span.icon {
+  border-color: var(--green);
+}
+
+.has-success span.icon svg {
+  fill: var(--green);
+}
+
+@keyframes float-labels {
+  0% {
+    top: 0.1em;
+    font-size: var(--font-size);
+  }
+  100% {
+    top: -1.2em;
+    font-size: 12px;
+  }
+}
+
+@-webkit-keyframes float-labels {
+  0% {
+    opacity: 0;
+    top: 0.1em;
+    font-size: var(--font-size);
+  }
+  100% {
+    top: -1em;
+    opacity: 1;
+  }
+}
+
+@keyframes float-labels-reverse {
+  0% {
+    top: -1.2em;
+    font-size: 12px;
+  }
+  100% {
+    top: 0.1em;
+    font-size: var(--font-size);
+  }
+}
+
+@-webkit-keyframes float-labels-reverse {
+  0% {
+    top: -1em;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 0.1em;
+    font-size: var(--font-size);
+  }
+}
+
+@keyframes float-labels-bottom {
+  0% {
+    opacity: 1;
+    top: 0.1em;
+    font-size: var(--font-size);
+  }
+  100% {
+    top: 3em;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes float-labels-bottom {
+  0% {
+    opacity: 1;
+    top: 0.1em;
+    font-size: var(--font-size);
+  }
+  100% {
+    top: 3em;
+    opacity: 1;
+  }
+}
+
+/**
+ *
+ * END Float label Style
+ *
+ */

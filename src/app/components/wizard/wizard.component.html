@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+      crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/css/cms.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body>
+  <div class="container bgr__map">
+    <div [ngSwitch]="step" >
+
+      <main *ngSwitchCase="0" >
+        <h1 class="title">Choose a name</h1>
+        <section  class="col-12">
+            <form method="post">
+                <div class="float-label-control nolabel large row">
+                    <input [(ngModel)]="partner.firstName" style="margin-right:50px"  type="text" class="form-control col-5 right-field" name="first name" >
+                    <input [(ngModel)]="partner.lastName" type="text" class="form-control col-5"  name="last name">
+                </div>
+                <button
+                  (click)="nextStep()"
+                  class="btn step-btn float-right"
+                >
+                    <span>Next</span>
+                    <svg width="13px" height="13px" viewBox="0 0 28 28">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g transform="translate(-21.000000, -21.000000)" fill="#FFFFFF">
+                                <polygon points="35 21.64 48.36 35 35 48.36 32.64 46 41.96 36.64 21.64 36.64 21.64 33.36 41.96 33.36 32.64 24"></polygon>
+                            </g>
+                        </g>
+                    </svg>
+                </button>
+            </form>
+        </section>
+      </main>
+
+      <main *ngSwitchCase="1" >
+        <h1 class="title">Choose a hair color</h1>
+        <section  class="col-12">
+          <ul>
+            <button  (click)="selectHairColor(color)" *ngFor="let color of hairColors" >
+                {{color}}
+            </button>
+          </ul>
+        </section>
+
+        <button
+          (click)="nextStep()"
+          class="btn step-btn float-right"
+        >
+            <span>Next</span>
+            <svg width="13px" height="13px" viewBox="0 0 28 28">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g transform="translate(-21.000000, -21.000000)" fill="#FFFFFF">
+                        <polygon points="35 21.64 48.36 35 35 48.36 32.64 46 41.96 36.64 21.64 36.64 21.64 33.36 41.96 33.36 32.64 24"></polygon>
+                    </g>
+                </g>
+            </svg>
+        </button>
+      </main>
+
+      <main *ngSwitchCase="2" >
+        <h1 class="title">Choose an eye color</h1>
+        <section  class="col-12">
+          <ul>
+            <button  (click)="selectEyeColor(color)" *ngFor="let color of eyeColors" >
+                {{color}}
+            </button>
+          </ul>
+        </section>
+
+        <button
+          (click)="nextStep()"
+          class="btn step-btn float-right"
+        >
+            <span>Next</span>
+            <svg width="13px" height="13px" viewBox="0 0 28 28">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g transform="translate(-21.000000, -21.000000)" fill="#FFFFFF">
+                        <polygon points="35 21.64 48.36 35 35 48.36 32.64 46 41.96 36.64 21.64 36.64 21.64 33.36 41.96 33.36 32.64 24"></polygon>
+                    </g>
+                </g>
+            </svg>
+        </button>
+      </main>
+
+      <main *ngSwitchCase="3" >
+        <h1 class="title">Choose a cup plan</h1>
+        <p >Note: you can always change your plan later</p>
+        <div class="row">
+
+          <section class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+              <div class="card card-center">
+                  <div class="card-body">
+                      <div class="icon">
+                          <svg width="35px" height="14px" viewBox="0 0 15 8">
+                              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                  <g transform="translate(-940.000000, -756.000000)" fill="#9DC53B">
+                                      <g transform="translate(370.000000, 349.000000)">
+                                          <g transform="translate(340.000000, 204.000000)">
+                                              <g transform="translate(200.000000, 174.000000)">
+                                                  <path d="M41.625,29.375 C42.2350031,29.375 42.7999974,29.5274985 43.32,29.8325 C43.8400026,30.1375015 44.2499985,30.5474974 44.55,31.0625 C44.8500015,31.5775026 45,32.1399969 45,32.75 C45,33.3600031 44.8500015,33.9224974 44.55,34.4375 C44.2499985,34.9525026 43.8400026,35.3624985 43.32,35.6675 C42.7999974,35.9725015 42.2350031,36.125 41.625,36.125 C41.1749978,36.125 40.7425021,36.0375009 40.3275,35.8625 C39.9124979,35.6874991 39.5450016,35.4400016 39.225,35.12 L38.445,34.415 L39.375,33.605 L40.11,34.22 C40.5400021,34.6500021 41.0449971,34.865 41.625,34.865 C42.0150019,34.865 42.3699984,34.7700009 42.69,34.58 C43.0100016,34.3899991 43.2649991,34.1325016 43.455,33.8075 C43.6450009,33.4824984 43.74,33.1300019 43.74,32.75 C43.74,32.3699981 43.6450009,32.0175016 43.455,31.6925 C43.2649991,31.3674984 43.0100016,31.1100009 42.69,30.92 C42.3699984,30.729999 42.0150019,30.635 41.625,30.635 C41.3449986,30.635 41.0775013,30.6874995 40.8225,30.7925 C40.5674987,30.8975005 40.340001,31.049999 40.14,31.25 C38.9599941,32.2900052 38.0800029,33.0749974 37.5,33.605 L35.745,35.15 C35.4349985,35.4600016 35.0750021,35.6999991 34.665,35.87 C34.254998,36.0400008 33.8250022,36.125 33.375,36.125 C32.7649969,36.125 32.2000026,35.9725015 31.68,35.6675 C31.1599974,35.3624985 30.7500015,34.9525026 30.45,34.4375 C30.1499985,33.9224974 30,33.3600031 30,32.75 C30,32.1399969 30.1499985,31.5775026 30.45,31.0625 C30.7500015,30.5474974 31.1599974,30.1375015 31.68,29.8325 C32.2000026,29.5274985 32.7649969,29.375 33.375,29.375 C33.8250022,29.375 34.2574979,29.4624991 34.6725,29.6375 C35.0875021,29.8125009 35.4549984,30.0599984 35.775,30.38 L36.57,31.085 L35.595,31.895 L34.89,31.28 C34.4599979,30.8499979 33.9550029,30.635 33.375,30.635 C32.9949981,30.635 32.6425016,30.729999 32.3175,30.92 C31.9924984,31.1100009 31.7350009,31.3674984 31.545,31.6925 C31.354999,32.0175016 31.26,32.3699981 31.26,32.75 C31.26,33.1300019 31.354999,33.4824984 31.545,33.8075 C31.7350009,34.1325016 31.9924984,34.3899991 32.3175,34.58 C32.6425016,34.7700009 32.9949981,34.865 33.375,34.865 C33.6550014,34.865 33.9224987,34.8125005 34.1775,34.7075 C34.4325013,34.6024995 34.659999,34.450001 34.86,34.25 C36.0400059,33.2099948 36.9199971,32.4250026 37.5,31.895 L39.255,30.35 C39.5650015,30.0399984 39.9249979,29.8000008 40.335,29.63 C40.745002,29.4599992 41.1749978,29.375 41.625,29.375 Z"
+                                                      id="all_inclusive---material"></path>
+                                              </g>
+                                          </g>
+                                      </g>
+                                  </g>
+                              </g>
+                          </svg>
+                      </div>
+                      <h2 class="card-title">AB</h2>
+                      <span class="card-content">
+                          <strong>Freemium model</strong>
+                          <br> Disclaimer: might be different sizes</span>
+                      <a href="#" (click)="selectCupPlan('AB')" class="btn btn-outline-primary">Free</a>
+                  </div>
+              </div>
+          </section>
+          <section class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+              <div class="card card-center">
+                  <div class="card-body">
+                      <div class="icon">
+                          <svg width="55px" height="34px" viewBox="0 0 15 8">
+                              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                  <g transform="translate(-940.000000, -756.000000)" fill="#9DC53B">
+                                      <g transform="translate(370.000000, 349.000000)">
+                                          <g transform="translate(340.000000, 204.000000)">
+                                              <g transform="translate(200.000000, 174.000000)">
+                                                  <path d="M41.625,29.375 C42.2350031,29.375 42.7999974,29.5274985 43.32,29.8325 C43.8400026,30.1375015 44.2499985,30.5474974 44.55,31.0625 C44.8500015,31.5775026 45,32.1399969 45,32.75 C45,33.3600031 44.8500015,33.9224974 44.55,34.4375 C44.2499985,34.9525026 43.8400026,35.3624985 43.32,35.6675 C42.7999974,35.9725015 42.2350031,36.125 41.625,36.125 C41.1749978,36.125 40.7425021,36.0375009 40.3275,35.8625 C39.9124979,35.6874991 39.5450016,35.4400016 39.225,35.12 L38.445,34.415 L39.375,33.605 L40.11,34.22 C40.5400021,34.6500021 41.0449971,34.865 41.625,34.865 C42.0150019,34.865 42.3699984,34.7700009 42.69,34.58 C43.0100016,34.3899991 43.2649991,34.1325016 43.455,33.8075 C43.6450009,33.4824984 43.74,33.1300019 43.74,32.75 C43.74,32.3699981 43.6450009,32.0175016 43.455,31.6925 C43.2649991,31.3674984 43.0100016,31.1100009 42.69,30.92 C42.3699984,30.729999 42.0150019,30.635 41.625,30.635 C41.3449986,30.635 41.0775013,30.6874995 40.8225,30.7925 C40.5674987,30.8975005 40.340001,31.049999 40.14,31.25 C38.9599941,32.2900052 38.0800029,33.0749974 37.5,33.605 L35.745,35.15 C35.4349985,35.4600016 35.0750021,35.6999991 34.665,35.87 C34.254998,36.0400008 33.8250022,36.125 33.375,36.125 C32.7649969,36.125 32.2000026,35.9725015 31.68,35.6675 C31.1599974,35.3624985 30.7500015,34.9525026 30.45,34.4375 C30.1499985,33.9224974 30,33.3600031 30,32.75 C30,32.1399969 30.1499985,31.5775026 30.45,31.0625 C30.7500015,30.5474974 31.1599974,30.1375015 31.68,29.8325 C32.2000026,29.5274985 32.7649969,29.375 33.375,29.375 C33.8250022,29.375 34.2574979,29.4624991 34.6725,29.6375 C35.0875021,29.8125009 35.4549984,30.0599984 35.775,30.38 L36.57,31.085 L35.595,31.895 L34.89,31.28 C34.4599979,30.8499979 33.9550029,30.635 33.375,30.635 C32.9949981,30.635 32.6425016,30.729999 32.3175,30.92 C31.9924984,31.1100009 31.7350009,31.3674984 31.545,31.6925 C31.354999,32.0175016 31.26,32.3699981 31.26,32.75 C31.26,33.1300019 31.354999,33.4824984 31.545,33.8075 C31.7350009,34.1325016 31.9924984,34.3899991 32.3175,34.58 C32.6425016,34.7700009 32.9949981,34.865 33.375,34.865 C33.6550014,34.865 33.9224987,34.8125005 34.1775,34.7075 C34.4325013,34.6024995 34.659999,34.450001 34.86,34.25 C36.0400059,33.2099948 36.9199971,32.4250026 37.5,31.895 L39.255,30.35 C39.5650015,30.0399984 39.9249979,29.8000008 40.335,29.63 C40.745002,29.4599992 41.1749978,29.375 41.625,29.375 Z"
+                                                      id="all_inclusive---material"></path>
+                                              </g>
+                                          </g>
+                                      </g>
+                                  </g>
+                              </g>
+                          </svg>
+                      </div>
+                      <h2 class="card-title">C</h2>
+                      <span class="card-content">
+                          <strong>For the man that doesn't need much</strong>
+                          <br> our most popular plan</span>
+                      <a href="#" (click)="selectCupPlan('C')" class="btn btn-outline-primary">19.99€ per month</a>
+                  </div>
+              </div>
+          </section>
+          <section class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <div class="card card-center">
+                <div class="card-body">
+                    <div class="icon">
+                        <svg width="85px" height="64px" viewBox="0 0 15 8">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-940.000000, -756.000000)" fill="#9DC53B">
+                                    <g transform="translate(370.000000, 349.000000)">
+                                        <g transform="translate(340.000000, 204.000000)">
+                                            <g transform="translate(200.000000, 174.000000)">
+                                                <path d="M41.625,29.375 C42.2350031,29.375 42.7999974,29.5274985 43.32,29.8325 C43.8400026,30.1375015 44.2499985,30.5474974 44.55,31.0625 C44.8500015,31.5775026 45,32.1399969 45,32.75 C45,33.3600031 44.8500015,33.9224974 44.55,34.4375 C44.2499985,34.9525026 43.8400026,35.3624985 43.32,35.6675 C42.7999974,35.9725015 42.2350031,36.125 41.625,36.125 C41.1749978,36.125 40.7425021,36.0375009 40.3275,35.8625 C39.9124979,35.6874991 39.5450016,35.4400016 39.225,35.12 L38.445,34.415 L39.375,33.605 L40.11,34.22 C40.5400021,34.6500021 41.0449971,34.865 41.625,34.865 C42.0150019,34.865 42.3699984,34.7700009 42.69,34.58 C43.0100016,34.3899991 43.2649991,34.1325016 43.455,33.8075 C43.6450009,33.4824984 43.74,33.1300019 43.74,32.75 C43.74,32.3699981 43.6450009,32.0175016 43.455,31.6925 C43.2649991,31.3674984 43.0100016,31.1100009 42.69,30.92 C42.3699984,30.729999 42.0150019,30.635 41.625,30.635 C41.3449986,30.635 41.0775013,30.6874995 40.8225,30.7925 C40.5674987,30.8975005 40.340001,31.049999 40.14,31.25 C38.9599941,32.2900052 38.0800029,33.0749974 37.5,33.605 L35.745,35.15 C35.4349985,35.4600016 35.0750021,35.6999991 34.665,35.87 C34.254998,36.0400008 33.8250022,36.125 33.375,36.125 C32.7649969,36.125 32.2000026,35.9725015 31.68,35.6675 C31.1599974,35.3624985 30.7500015,34.9525026 30.45,34.4375 C30.1499985,33.9224974 30,33.3600031 30,32.75 C30,32.1399969 30.1499985,31.5775026 30.45,31.0625 C30.7500015,30.5474974 31.1599974,30.1375015 31.68,29.8325 C32.2000026,29.5274985 32.7649969,29.375 33.375,29.375 C33.8250022,29.375 34.2574979,29.4624991 34.6725,29.6375 C35.0875021,29.8125009 35.4549984,30.0599984 35.775,30.38 L36.57,31.085 L35.595,31.895 L34.89,31.28 C34.4599979,30.8499979 33.9550029,30.635 33.375,30.635 C32.9949981,30.635 32.6425016,30.729999 32.3175,30.92 C31.9924984,31.1100009 31.7350009,31.3674984 31.545,31.6925 C31.354999,32.0175016 31.26,32.3699981 31.26,32.75 C31.26,33.1300019 31.354999,33.4824984 31.545,33.8075 C31.7350009,34.1325016 31.9924984,34.3899991 32.3175,34.58 C32.6425016,34.7700009 32.9949981,34.865 33.375,34.865 C33.6550014,34.865 33.9224987,34.8125005 34.1775,34.7075 C34.4325013,34.6024995 34.659999,34.450001 34.86,34.25 C36.0400059,33.2099948 36.9199971,32.4250026 37.5,31.895 L39.255,30.35 C39.5650015,30.0399984 39.9249979,29.8000008 40.335,29.63 C40.745002,29.4599992 41.1749978,29.375 41.625,29.375 Z"
+                                                    id="all_inclusive---material"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">DD</h2>
+                    <span class="card-content">
+                        <strong>Perimum!</strong>
+                        <br> for the discerning gentleman</span>
+                    <a href="#" (click)="selectCupPlan('DD')" class="btn btn-outline-primary">44.99€ per month</a>
+                </div>
+            </div>
+          </section>
+
+        </div>
+        <button
+          (click)="nextStep()"
+          class="btn step-btn float-right"
+        >
+            <span>Next</span>
+            <svg width="13px" height="13px" viewBox="0 0 28 28">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g transform="translate(-21.000000, -21.000000)" fill="#FFFFFF">
+                        <polygon points="35 21.64 48.36 35 35 48.36 32.64 46 41.96 36.64 21.64 36.64 21.64 33.36 41.96 33.36 32.64 24"></polygon>
+                    </g>
+                </g>
+            </svg>
+        </button>
+
+      </main>
+
+      <main *ngSwitchCase="4" >
+        <h1 class="title">Congratulations!</h1>
+      </main>
+
+    </div>
+    <div class="row">
+      <main class="">
+          <h1 class="title"> Review </h1>
+          <p class="subtitle">Is this your desired partner?</p>
+          <div class="row review-table">
+              <a *ngIf="partner.firstName" href="#" class="table-row">
+                  <span>first name</span>
+                  <span>{{partner.firstName}}</span>
+                  <span (click)="selectStep(0)" >edit</span>
+              </a>
+              <a *ngIf="partner.lastName" href="#" class="table-row">
+                  <span>last name</span>
+                  <span>{{partner.lastName}}</span>
+                  <span (click)="selectStep(0)" >edit</span>
+              </a>
+              <a *ngIf="partner.hairColor" href="#" class="table-row">
+                  <span>hair color</span>
+                  <span>{{partner.hairColor}}</span>
+                  <span (click)="selectStep(1)">edit</span>
+              </a>
+              <a *ngIf="partner.eyeColor" href="#" class="table-row">
+                  <span>eye color</span>
+                  <span>{{partner.eyeColor}}</span>
+                  <span (click)="selectStep(2)">edit</span>
+              </a>
+              <a *ngIf="partner.package" href="#" class="table-row">
+                  <span>package</span>
+                  <span>{{partner.package}}</span>
+                  <span (click)="selectStep(3)">edit</span>
+              </a>
+          </div>
+      </main>
+
+
+    </div>
+  </div>
+</body>
+
+</html>

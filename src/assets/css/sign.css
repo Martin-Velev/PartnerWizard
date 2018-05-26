@@ -1,0 +1,202 @@
+.bgr__blue {
+    background-color: var(--blue);
+}
+
+.sign__process .panel {
+    height: 600px;
+    background-color: #fff;
+    padding: 0;
+    margin: 35px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.sign__process h1 {
+    font-size: 30px;
+    font-weight: 200;
+    margin: 70px -30px 50px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.sign__process aside {
+    max-width: 300px;
+    height: 600px;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.sign__process aside ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sign__process li img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.sign__process aside h4,
+.sign__process aside p {
+    position: relative;
+    z-index: 1;
+    color: #FFF;
+}
+
+.sign__process .logo {
+    width: 70px;
+    display: block;
+    margin: 50px auto;
+    position: relative;
+    z-index: 1;
+}
+
+.sign__process aside .bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 30px 45px;
+}
+
+.sign__process h4 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 1.1;
+    font-weight: 100;
+}
+
+.sign__process aside p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #ADADAE;
+}
+
+.sign__process main {
+    padding: 0 25px 50px 25px;
+    position: relative;
+}
+
+.sign__process main:before {
+    content: url('../images/green-dot.svg');
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: -60%;
+    width: 125px;
+    height: 52px;
+    z-index: 0;
+}
+
+.sign__process main:after {
+    content: url('../images/grey-dot.svg');
+    position: absolute;
+    display: block;
+    top: 0;
+    right: -30%;
+    width: 127px;
+    height: 91px;
+    z-index: 0;
+}
+
+.sign__process form {
+    margin-top: 60px;
+}
+
+.sign__process form .row p {
+    padding-top: 10px;
+}
+
+.sign__process main footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    left: 0;
+}
+
+.sign__process main footer:before {
+    content: "";
+    width: 100px;
+    height: 1px;
+    background-color: var(--grey-lighter);
+    display: block;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    margin-left: -50px;
+}
+
+.sign__process footer span {
+    text-align: center;
+    display: block;
+    padding: 0 10px;
+    background-color: #fff;
+    position: relative;
+    width: 40px;
+    margin: -27px auto 10px auto;
+}
+
+.sign__process footer div {
+    width: 190px;
+    margin: 0 auto;
+    display: block;
+}
+
+.login__link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.content {
+    font-size: var(--text-size);
+    color: var(--grey-dark);
+    margin-bottom: 80px;
+}
+
+.content strong.red {
+    font-weight: normal;
+    display: block;
+}
+
+.error strong.red {
+    margin-bottom: 30px;
+    display: block;
+}
+
+.float-label-control.row input.form-control.col {
+    margin-right: 5px;
+    text-align: center;
+    max-width: 13%;
+    height: 60px;
+}
+
+.float-label-control.row input.form-control.col:nth-child(10N+3) {
+    margin-right: 20px;
+}
+
+.float-label-control.row input.form-control.col:last-child {
+    margin-right: 0;
+}
+
+@media (max-width: 991px) {
+    .sign__process .logo {
+        margin-top: 80px;
+    }
+    .sign__process .panel {
+        height: auto;
+    }
+    .sign__process main {
+        padding-bottom: 100px;
+    }
+    .sign__process h1 {
+        font-size: 28px;
+        margin-top: 50px;
+    }
+}
