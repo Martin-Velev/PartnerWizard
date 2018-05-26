@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import Address from '../../models/address';
-import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-wizard',
   templateUrl: './wizard.component.html',
 })
-
 
 export class WizardComponent implements OnInit {
   step: number = 0;
@@ -14,7 +12,7 @@ export class WizardComponent implements OnInit {
   hairColors: string[];
   eyeColors: string[];
 
-  constructor(private dataService: DataService) {
+  constructor() {
     this.partner = {
       firstName: '',
       lastName: '',
@@ -35,15 +33,15 @@ export class WizardComponent implements OnInit {
     this.step += 1;
   }
 
-  selectStep = (step: number ) => {
+  selectStep = (step: number) => {
     this.step = step
   }
 
-  selectHairColor = (color: string )  => {
+  selectHairColor = (color: string)  => {
     this.partner.hairColor = color;
   }
 
-  selectEyeColor = (color: string )  => {
+  selectEyeColor = (color: string)  => {
     this.partner.eyeColor = color;
   }
 
